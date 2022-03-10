@@ -27,7 +27,7 @@ const Login = () => {
           <h1>Login Prueba Tita Media</h1>
           <p>Usando API de Goolge</p>
           <GoogleLogin
-            clientId="364726925668-rcptolua4c1vf6edn5o3qki93ufcus47.apps.googleusercontent.com"
+            clientId={process.env.REACT_APP_GOOGLE_KEY}
             buttonText="Login with google"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
