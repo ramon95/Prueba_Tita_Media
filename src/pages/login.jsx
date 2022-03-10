@@ -1,11 +1,13 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login'
 import Cookies from 'universal-cookie'
+import { useNavigate } from 'react-router-dom'
 import '../assets/styles/login.scss'
 import Logo from '../assets/image/logo.jpg'
 
 const Login = () => {
   const cookies = new Cookies()
+  const navigate = useNavigate()
   const responseGoogle = (res) => {
     const user = res.profileObj
     cookies.set('email', user.email, { path: '/' })
@@ -13,6 +15,7 @@ const Login = () => {
     cookies.set('givenName', user.givenName, { path: '/' })
     cookies.set('imageUrl', user.imageUrl, { path: '/' })
     cookies.set('name', user.name, { path: '/' })
+    navigate('/')
   }
   return (
     <div className="login_container">
