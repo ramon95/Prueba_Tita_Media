@@ -1,8 +1,10 @@
-.box_container {
+.home_container {
   background-image: url('../image/fondo.jpg');
-  padding: 15px;
-  display: grid;
-  grid-auto-columns: 200px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  .box_container {
+    padding: 15px;
+    display: grid;
+    grid-auto-columns: 200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }

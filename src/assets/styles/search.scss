@@ -1,0 +1,10 @@
+.search_container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  select {
+    width: 80%;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}

@@ -1,12 +1,14 @@
 import {
   SET_POST,
-  TOGGLE_LOADER,
+  SET_TAGS,
   SET_POST_ID,
   SET_USER_ID,
+  TOGGLE_LOADER,
 } from '../actions/types'
 
 const initialState = {
   posts: null,
+  tags: [],
   postId: '',
   userId: '',
   loading: false,
@@ -21,6 +23,8 @@ const Reducer = (state = initialState, action) => {
       return { ...state, postId: action.payload }
     case SET_USER_ID:
       return { ...state, userId: action.payload }
+    case SET_TAGS:
+      return { ...state, tags: action.payload }
     case TOGGLE_LOADER:
       return { ...state, loading: !state.loading }
     default:

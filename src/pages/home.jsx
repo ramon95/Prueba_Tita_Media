@@ -2,21 +2,22 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import BoxPost from '../components/box_post/box_post'
 import Layout from '../components/layout/layout'
-import getPosts from '../api/get/posts'
+import { getPosts } from '../api/get/posts'
 import { setPosts, toggleLoader } from '../redux/actions'
-import '../assets/styles/home.scss'
 import Modal from '../components/modal/modal'
 import getComments from '../api/get/comments'
 import ListComments from '../components/list_comments/list_comments'
 import getUser from '../api/get/users'
 import UserInfo from '../components/user_info/user_info'
+import Search from '../components/search/search'
+import '../assets/styles/home.scss'
 
 const Home = () => {
+  const dispatch = useDispatch()
   const [modalComments, setModalComments] = useState(false)
   const [modalUser, setModalUser] = useState(false)
   const [comments, setComments] = useState([])
   const [user, setUser] = useState({})
-  const dispatch = useDispatch()
   const posts = useSelector((state) => state.posts)
   const postId = useSelector((state) => state.postId)
   const userId = useSelector((state) => state.userId)
@@ -59,7 +60,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <>
+      <div className="home_container">
         {modalComments && (
           <Modal
             title="Comments"
@@ -73,6 +74,7 @@ const Home = () => {
             <UserInfo user={user} />
           </Modal>
         )}
+        <Search />
         <div className="box_container">
           {posts !== null &&
             posts.data.map((post) => (
@@ -84,7 +86,7 @@ const Home = () => {
               />
             ))}
         </div>
-      </>
+      </div>
     </Layout>
   )
 }
