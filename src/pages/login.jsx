@@ -9,6 +9,7 @@ const Login = () => {
   const cookies = new Cookies()
   const navigate = useNavigate()
   const responseGoogle = (res) => {
+    console.log('res', res)
     const user = res.profileObj
     cookies.set('email', user.email, { path: '/' })
     cookies.set('familyName', user.familyName, { path: '/' })
