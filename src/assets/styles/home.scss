@@ -1,10 +1,10 @@
 .home_container {
-  background-image: url('../image/fondo.jpg');
+  background: #dedede;
   .box_container {
     padding: 15px;
     display: grid;
     grid-auto-columns: 200px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
   }
 }

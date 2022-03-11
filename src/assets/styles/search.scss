@@ -3,7 +3,9 @@
   justify-content: center;
   padding-top: 15px;
   select {
-    width: 80%;
+    border: none;
+    box-shadow: 6px 7px 5px 0px rgba(168, 168, 168, 1);
+    width: 30%;
     padding: 5px;
     border-radius: 5px;
   }

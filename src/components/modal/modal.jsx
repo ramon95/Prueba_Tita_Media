@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import '../../assets/styles/modal.scss'
 
 const Modal = ({ title, children, hideModal }) => (
@@ -12,7 +14,7 @@ const Modal = ({ title, children, hideModal }) => (
           onClick={hideModal}
           className="modal_content-box-close"
         >
-          X
+          <FontAwesomeIcon icon={faXmark} />
         </h3>
       </div>
       {children}

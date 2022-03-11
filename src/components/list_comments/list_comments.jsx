@@ -10,13 +10,17 @@ const ListComments = ({ comments }) => (
         <div key={comment.id}>
           <div className="listComments_container-user" key={comment.id}>
             <img src={comment.owner.picture} alt="User Avatar" />
-            <h3>{comment.owner.firstName}</h3>
-          </div>
-          <div className="listComments_container-comment">
-            <p>{comment.message}</p>
-            <p className="date">
-              {moment(comment.publishDate).format('MMMM Do YYYY')}
-            </p>
+            <div className="listComments_container-comment">
+              <div className="listComments_container-comment-name">
+                <h3>
+                  {comment.owner.firstName} {comment.owner.lastName}
+                </h3>
+                <p className="date">
+                  {moment(comment.publishDate).format('MMMM Do YYYY')}
+                </p>
+              </div>
+              <p>{comment.message}</p>
+            </div>
           </div>
         </div>
       ))

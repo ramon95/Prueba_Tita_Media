@@ -1,12 +1,29 @@
 .user_info_container {
   padding: 15px 15px;
-  display: flex;
-  img {
-    border-radius: 15px;
-    margin-right: 15px;
-    width: 150px;
+  .user_info_container_group {
+    display: flex;
+    justify-content: space-around;
+    img {
+      border-radius: 50%;
+      margin-right: 15px;
+      width: 150px;
+    }
+    .user_info_container-personal {
+      margin-right: 15px;
+      h3 {
+        strong {
+          color: #463939;
+        }
+      }
+    }
   }
-  .user_info_container-personal {
-    margin-right: 15px;
+  .locations {
+    text-align: center;
+    margin-top: 15px;
+    h3 {
+      strong {
+        color: #463939;
+      }
+    }
   }
 }
