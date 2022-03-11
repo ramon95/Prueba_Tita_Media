@@ -7,7 +7,7 @@
   overflow-y: auto;
   .modal_content-box {
     position: absolute;
-    left: 300px;
+    left: 20%;
     top: 100px;
     width: 60%;
     background: white;
@@ -20,6 +20,16 @@
       align-items: center;
       .modal_content-box-close {
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .modal_content {
+    .modal_content-box {
+      .modal_content-box-title {
+        font-size: 12px;
       }
     }
   }

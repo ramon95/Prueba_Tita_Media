@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <div className="header_container">
       <img src={Logo} alt="Logo Tita Media" />
-      <h1>Tita Media</h1>
+      <h1 className="title">Tita Media</h1>
       <div
         aria-hidden="true"
         className="header_container_dropdown"

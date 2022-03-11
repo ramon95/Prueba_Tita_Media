@@ -10,3 +10,19 @@
     border-radius: 5px;
   }
 }
+
+@media (max-width: 800px) {
+  .search_container {
+    select {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .search_container {
+    select {
+      width: 80%;
+    }
+  }
+}

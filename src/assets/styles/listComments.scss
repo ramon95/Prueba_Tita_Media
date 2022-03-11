@@ -25,3 +25,30 @@
     }
   }
 }
+
+@media (max-width: 450px) {
+  .listComments_container {
+    h1 {
+      font-size: 18px;
+    }
+    padding: 15px 10px;
+    .listComments_container-user {
+      img {
+        width: 35px;
+      }
+      .listComments_container-comment {
+        .listComments_container-comment-name {
+          h3 {
+            font-size: 12px;
+          }
+          .date {
+            font-size: 8px;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
