@@ -3,15 +3,22 @@ import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment, faTags } from '@fortawesome/free-solid-svg-icons'
+import { setPostId, setUserId } from '../../redux/actions'
 import '../../assets/styles/boxPost.scss'
-import { setPostId } from '../../redux/actions'
 
-const BoxPost = ({ post, hideModal }) => {
+const BoxPost = ({ post, hideModalComments, hideModalUser }) => {
   const dispatch = useDispatch()
-  const handleViewModal = (id) => {
+
+  const handleViewModalComments = (id) => {
     dispatch(setPostId(id))
-    hideModal()
+    hideModalComments()
   }
+
+  const handleViewModalUser = (id) => {
+    dispatch(setUserId(id))
+    hideModalUser()
+  }
+
   return (
     <div className="box_post_container">
       <div className="box_post_content">
@@ -19,7 +26,12 @@ const BoxPost = ({ post, hideModal }) => {
           <img src={post.image} alt="Post" />
         </div>
         <div className="box_post_container-title">
-          <img src={post.owner.picture} alt="User creator of the post" />
+          <img
+            aria-hidden="true"
+            onClick={() => handleViewModalUser(post.owner.id)}
+            src={post.owner.picture}
+            alt="User creator of the post"
+          />
           <div>
             <h1>{post.owner.firstName}</h1>
             <p>{post.text}</p>
@@ -38,14 +50,14 @@ const BoxPost = ({ post, hideModal }) => {
         </div>
         <div className="box_post_container-interactions">
           <p>
-            <FontAwesomeIcon icon={faHeart} /> {post.likes} Likes
+            <FontAwesomeIcon icon={faHeart} color="red" /> {post.likes} Likes
           </p>
           <p
             aria-hidden="true"
-            onClick={() => handleViewModal(post.id)}
+            onClick={() => handleViewModalComments(post.id)}
             className="box_post_container-interactions-commets"
           >
-            <FontAwesomeIcon icon={faComment} /> Comments
+            <FontAwesomeIcon icon={faComment} color="gray" /> Comments
           </p>
         </div>
       </div>
@@ -69,7 +81,8 @@ BoxPost.propTypes = {
       firstName: PropTypes.string,
     }),
   }).isRequired,
-  hideModal: PropTypes.func.isRequired,
+  hideModalComments: PropTypes.func.isRequired,
+  hideModalUser: PropTypes.func.isRequired,
 }
 
 export default BoxPost

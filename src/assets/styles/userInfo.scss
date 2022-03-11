@@ -1,0 +1,12 @@
+.user_info_container {
+  padding: 15px 15px;
+  display: flex;
+  img {
+    border-radius: 15px;
+    margin-right: 15px;
+    width: 150px;
+  }
+  .user_info_container-personal {
+    margin-right: 15px;
+  }
+}

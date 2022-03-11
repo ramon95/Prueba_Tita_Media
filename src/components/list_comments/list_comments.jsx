@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 import PropTypes from 'prop-types'
 import '../../assets/styles/listComments.scss'
 
@@ -13,6 +14,9 @@ const ListComments = ({ comments }) => (
           </div>
           <div className="listComments_container-comment">
             <p>{comment.message}</p>
+            <p className="date">
+              {moment(comment.publishDate).format('MMMM Do YYYY')}
+            </p>
           </div>
         </div>
       ))
