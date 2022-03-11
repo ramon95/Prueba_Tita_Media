@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import getTags from '../../api/get/tags'
@@ -16,6 +17,7 @@ const Search = () => {
       .catch((error) => {
         console.log(error)
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleChange = (e) => {
