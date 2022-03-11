@@ -10,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate()
   const responseGoogle = (res) => {
     console.log('res', res)
+    console.log('id', process.env.REACT_APP_GOOGLE_KEY)
     const user = res.profileObj
     cookies.set('email', user.email, { path: '/' })
     cookies.set('familyName', user.familyName, { path: '/' })
